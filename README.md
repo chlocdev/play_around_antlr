@@ -11,7 +11,7 @@ Antlr Python
 
 - Generate the components in python language: `antlr4 -Dlanguage=Python3 path/to/grammar.g4 -visitor`
 
-
+- Install `graphviz` on linux: `conda install python-graphviz`
 # references
 
 [ANTLR](https://www.antlr.org/)
