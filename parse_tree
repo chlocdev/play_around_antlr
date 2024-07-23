@@ -1,4 +1,15 @@
 digraph {
-	RContext -> hello
-	RContext -> loc
+	ProgContext -> AssignmentContext
+	AssignmentContext -> x
+	AssignmentContext -> "="
+	AssignmentContext -> 10
+	ProgContext -> AssignmentContext
+	AssignmentContext -> y
+	AssignmentContext -> "="
+	AssignmentContext -> 20
+	ProgContext -> AssignmentContext
+	AssignmentContext -> c
+	AssignmentContext -> "="
+	AssignmentContext -> 30
+	ProgContext -> <EOF>
 }
