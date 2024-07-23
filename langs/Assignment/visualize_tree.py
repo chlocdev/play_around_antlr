@@ -45,9 +45,11 @@ def traverse_tree(dot, tree):
     if tree.getChildCount() > 0:
         # Get parent string
         parent_str = get_node_name(tree)
+
         for child in tree.children:
             # Get child string
             child_str = get_node_name(child)
+
             # Give a edge from parent - child
             dot.edge(parent_str, child_str)
             # Continue traverse to recursively
