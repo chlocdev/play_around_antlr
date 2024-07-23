@@ -9,6 +9,7 @@ from HelloParser import HelloParser as Parser
 from antlr4.tree.Trees import Trees
 from graphviz import Digraph
 
+# Init
 print("Import Successful!")
 
 def get_node_name(node) ->str:
