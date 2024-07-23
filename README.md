@@ -1,6 +1,17 @@
 # play_around_antlr
 Antlr Python
 
+# guides
+
+- Check the setup: `antlr4`
+
+- Generate the components: `antlr4 path/to/grammar.g4`
+
+- Generate the components (include the visitor): `antlr4 path/to/grammar.g4 -visitor`
+
+- Generate the components in python language: `antlr4 -Dlanguage=Python3 path/to/grammar.g4 -visitor`
+
+
 # references
 
 [ANTLR](https://www.antlr.org/)
