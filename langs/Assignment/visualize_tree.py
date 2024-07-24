@@ -44,11 +44,11 @@ def traverse_tree(dot, tree):
     # If current tree is not a leaf-node
     if tree.getChildCount() > 0:
         # Get parent string
-        parent_str = get_node_name(tree)
+        parent_str = get_node_name(tree) + "\n[" + str(id(tree)) + "]"
 
         for child in tree.children:
             # Get child string
-            child_str = get_node_name(child)
+            child_str = get_node_name(child) + "\n[" + str(id(child)) + "]"
 
             # Give a edge from parent - child
             dot.edge(parent_str, child_str)

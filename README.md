@@ -1,33 +1,6 @@
 # play_around_antlr
+
 Antlr Python
-
-        def traverse_tree_and_revert(dot, tree):
-            traversal_log = []
-            
-            def traverse_and_log(tree):
-                # If current tree is not a leaf-node
-                if tree.getChildCount() > 0:
-                    # Get parent string
-                    parent_str = get_node_name(tree)
-                    for child in tree.children:
-                        # Get child string
-                        child_str = get_node_name(child)
-                        # Log the edge from parent to child
-                        traversal_log.append((parent_str, child_str))
-                        # Continue traverse recursively
-                        traverse_and_log(child)
-            
-            # Perform the initial traversal and log it
-            traverse_and_log(tree)
-            
-            # Add edges in reversed order
-            for parent_str, child_str in reversed(traversal_log):
-                dot.edge(child_str, parent_str)
-
-        # Helper function to get node name (assuming it's defined somewhere)
-        def get_node_name(node):
-            return str(node).split()[0]
-
 
 # guides
 
@@ -50,3 +23,5 @@ Antlr Python
 [grammars-v4](https://github.com/antlr/grammars-v4)
 
 [ANTLR4 grammar syntax support](https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4)
+
+[GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)

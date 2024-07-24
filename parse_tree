@@ -1,15 +1,41 @@
 digraph {
-	ProgContext -> AssignmentContext
-	AssignmentContext -> x
-	AssignmentContext -> "="
-	AssignmentContext -> 10
-	ProgContext -> AssignmentContext
-	AssignmentContext -> y
-	AssignmentContext -> "="
-	AssignmentContext -> 20
-	ProgContext -> AssignmentContext
-	AssignmentContext -> c
-	AssignmentContext -> "="
-	AssignmentContext -> 30
-	ProgContext -> <EOF>
+	"ProgContext
+[137776426685264]" -> "AssignmentContext
+[137776426685488]"
+	"AssignmentContext
+[137776426685488]" -> "x
+[137776426707520]"
+	"AssignmentContext
+[137776426685488]" -> "=
+[137776426708096]"
+	"AssignmentContext
+[137776426685488]" -> "10
+[137776426708480]"
+	"ProgContext
+[137776426685264]" -> "AssignmentContext
+[137776426685600]"
+	"AssignmentContext
+[137776426685600]" -> "y
+[137776426708800]"
+	"AssignmentContext
+[137776426685600]" -> "=
+[137776426233920]"
+	"AssignmentContext
+[137776426685600]" -> "20
+[137776426234112]"
+	"ProgContext
+[137776426685264]" -> "AssignmentContext
+[137776426685712]"
+	"AssignmentContext
+[137776426685712]" -> "c
+[137776426234240]"
+	"AssignmentContext
+[137776426685712]" -> "=
+[137776426708736]"
+	"AssignmentContext
+[137776426685712]" -> "30
+[137776426234496]"
+	"ProgContext
+[137776426685264]" -> "<EOF>
+[137776426234560]"
 }
