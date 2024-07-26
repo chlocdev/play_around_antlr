@@ -38,7 +38,21 @@ Antlr Python
 
 # Testing and Profiling
 
-- Barkus-Naur-Form -> **Chain-Form**
+**Convert Barkus-Naur-Form -> Chain-Form**
+
+- Barkus-Naur-Form: `A: (B|C|D)? E  (F|G);`
+
+- Chain Form:
+
+                A=E-F
+                A=E-G
+                A=B-E-F
+                A=C-E-F
+                A=D-E-F
+                A=B-E-G
+                A=C-E-G
+                A=D-E-G
+                ...
 
 - Profiling
 
@@ -47,6 +61,8 @@ Antlr Python
 [ANTLR](https://www.antlr.org/)
 
 [ANTLR.lab](http://lab.antlr.org/)
+
+[ANTLR-note](./assets/antlr.md)
 
 [grammars-v4](https://github.com/antlr/grammars-v4)
 
