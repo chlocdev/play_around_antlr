@@ -36,6 +36,12 @@ Antlr Python
         -Xlog               dump lots of logging info to antlr-timestamp.log
         -Xexact-output-dir  all output goes into -o dir regardless of paths/package
 
+# Testing and Profiling
+
+- Barkus-Naur-Form -> **Chain-Form**
+
+- Profiling
+
 # references
 
 [ANTLR](https://www.antlr.org/)
