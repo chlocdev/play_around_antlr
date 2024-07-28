@@ -56,6 +56,10 @@ Antlr Python
 
 - Profiling
 
+# Migration
+
+`[input]->[OldParser]->[OldAST]->[NewAST]->[output]`
+
 # references
 
 [ANTLR](https://www.antlr.org/)
