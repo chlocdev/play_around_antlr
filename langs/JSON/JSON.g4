@@ -1,22 +1,48 @@
 grammar JSON;
 
+// Lexer rules
+fragment DIGIT : '0'..'9';
+fragment ESCAPE
+    : '\\' ( ["\\/bfnrt] | UNICODE )
+    ;
+fragment UNICODE
+    : 'u' HEX HEX HEX HEX
+    ;
+fragment HEX : [0-9a-fA-F];
+
+STRING
+    : '"' ( ESCAPE | ~ ["\\\r\n] )* '"'
+    ;
+
+NUMBER
+    : '-'? INT ( '.' DIGIT+ )? EXP?
+    ;
+fragment INT
+    : '0' | [1-9] DIGIT*
+    ;
+fragment EXP
+    : [eE] [+\-]? DIGIT+
+    ;
+
+TRUE
+    : 'true'
+    ;
+
+FALSE
+    : 'false'
+    ;
+
+NULL
+    : 'null'
+    ;
+
+// Parser rules
 json
     : value
     ;
 
-value
-    : STRING
-    | NUMBER
-    | obj
-    | array
-    | 'true'
-    | 'false'
-    | 'null'
-    ;
-
-
 obj
-    : '{' pair (',' pair)* '}'
+    : '{' pair ( ',' pair )* '}'
     | '{' '}'
     ;
 
@@ -25,35 +51,21 @@ pair
     ;
 
 array
-    : '[' value (',' value)* ']'
+    : '[' value ( ',' value )* ']'
     | '[' ']'
     ;
 
-STRING
-    : '"' (ESC | ~["\\])* '"'
+value
+    : STRING
+    | NUMBER
+    | obj
+    | array
+    | TRUE
+    | FALSE
+    | NULL
     ;
 
-fragment ESC
-    : '\\' (["\\/bfnrt] | 'u' HEX HEX HEX HEX)
-    ;
-
-NUMBER
-    : '-'? INT ('.' [0-9] +)? EXP?
-    ;
-
-fragment INT
-    : '0'
-    | [1-9] [0-9]*
-    ;
-
-fragment EXP
-    : [eE] [+\-]? [0-9]+
-    ;
-
+// Ignore whitespace
 WS
-    : [ \t\n\r]+ -> skip
-    ;
-
-fragment HEX
-    : [0-9a-fA-F]
+    : [ \t\r\n]+ -> skip
     ;
