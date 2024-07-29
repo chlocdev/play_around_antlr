@@ -52,6 +52,7 @@ Antlr Python
 - Barkus-Naur-Form: `A: (B|C|D)? E  (F|G);`
 
 - Chain Form:
+
                 A=E-F
                 A=E-G
                 A=B-E-F
