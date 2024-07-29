@@ -36,14 +36,22 @@ Antlr Python
         -Xlog               dump lots of logging info to antlr-timestamp.log
         -Xexact-output-dir  all output goes into -o dir regardless of paths/package
 
-# Testing and Profiling
+# Evaluate Grammar
+
+
+                   /----Lexer ------> MyLexer
+                  /-----Parser -----> MyParser -----> test_parser.py------> [Profiling]
+        grammar.g4------Listener ---> MyListener ---> test_listener.py----> [Sequences]
+                  \-----Visitor ----> MyVisitor ----> test_visitor.py
+                   \----------------> AST-----------> visualize_tree.py---> [Diagram]
+                    \-----[BNF-Chain]----[Chain-Chain]--------------------> [Some hairy thing]
+
 
 **Convert Barkus-Naur-Form -> Chain-Form**
 
 - Barkus-Naur-Form: `A: (B|C|D)? E  (F|G);`
 
 - Chain Form:
-
                 A=E-F
                 A=E-G
                 A=B-E-F
@@ -53,8 +61,6 @@ Antlr Python
                 A=C-E-G
                 A=D-E-G
                 ...
-
-- Profiling
 
 # Migration
 
