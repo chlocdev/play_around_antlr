@@ -39,12 +39,12 @@ Antlr Python
 # Evaluate Grammar
 
 
-                   /----Lexer ------> MyLexer
-                  /-----Parser -----> MyParser -----> test_parser.py------> [Profiling]
-        grammar.g4------Listener ---> MyListener ---> test_listener.py----> [Sequences]
-                  \-----Visitor ----> MyVisitor ----> test_visitor.py
-                   \----------------> AST-----------> visualize_tree.py---> [Diagram]
-                    \-----[BNF-Chain]----[Chain-Chain]--------------------> [Some hairy thing]
+                           /----Lexer ------> MyLexer
+        literal\          /-----Parser -----> MyParser -----> test_parser.py------> [Profiling]
+        sympol--grammar.g4------Listener ---> MyListener ---> test_listener.py----> [Sequences]
+          rules/          \-----Visitor ----> MyVisitor ----> test_visitor.py
+                           \----------------> AST-----------> visualize_tree.py---> [Diagram]
+                            \-----[BNF-Chain]----[Chain-Chain]--------------------> [Some hairy thing]
 
 
 **Convert Barkus-Naur-Form -> Chain-Form**
@@ -80,3 +80,5 @@ Antlr Python
 [ANTLR4 grammar syntax support](https://marketplace.visualstudio.com/items?itemName=mike-lischke.vscode-antlr4)
 
 [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)
+
+[cprofile](https://docs.python.org/3/library/profile.html)
